@@ -99,9 +99,9 @@ $("#footerContacts").append(phone, email, github);
 			"images/source-connect.png"
 			]
 		}, 
-		{"title": "Shrodinger Equation Solution",
+		{"title": "Schrödinger Equation Solution",
 		"dates": "2015",
-		"description": "A numerical solution of the Shrodinger Equation using Finite Differences for the Harmonic Oscillator Potential.",
+		"description": "A numerical solution of the Schrödinger Equation using Finite Differences for the Harmonic Oscillator Potential.",
 		"images": [
 			"images/schrodinger1.png",
 			"images/schrodinger2.png"
