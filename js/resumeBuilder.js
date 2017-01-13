@@ -118,7 +118,9 @@ $("#footerContacts").append(phone, email, github);
  			"degree dates": "2013-2016",
  			"url": "https://www.fisk.edu/",
  			"major": "Physics",
- 			"degree": "B.S."
+ 			"degree": "B.S.",
+ 			"transcript": "PDF/omar-transcript.pdf",
+ 			"gpa": "3.94"
  		}
  	],
  	"onlineCourses": [
@@ -166,7 +168,9 @@ function displayEd() {
 		var dates = HTMLschoolDates.replace("%data%", school["degree dates"]);
 		var major = HTMLschoolMajor.replace("%data%", school.major);
 		var degree = HTMLschoolDegree.replace("%data%", school.degree);
-		$(".education-entry").append(name+degree+dates+location+major);
+		var transcript = HTMLschoolTranscript.replace("#", school.transcript)
+		transcript = transcript.replace("%data%", school.gpa)
+		$(".education-entry").append(name+degree+dates+'<br>'+transcript+location+major);
 	}
 	
 	$(".education-entry").append(HTMLonlineClasses);
