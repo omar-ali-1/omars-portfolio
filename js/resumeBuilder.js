@@ -25,7 +25,7 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
  var name = HTMLheaderName.replace("%data%", "Omar Ali");
- var role = HTMLheaderRole.replace("%data%", "Web Developer");
+ var role = HTMLheaderRole.replace("%data%", "Programming | Web Developement");
  var img = HTMLbioPic.replace("%data%", "images/me.jpg");
  var welcome = HTMLwelcomeMsg.replace("%data%", "Welcome to my bio page!");
  
@@ -117,9 +117,8 @@ $("#footerContacts").append(phone, email, github);
  			"location": "1000 17th Ave N, Nashville, TN, United States",
  			"degree dates": "2013-2016",
  			"url": "https://www.fisk.edu/",
- 			"majors": [
- 				"Physics"
- 			]
+ 			"major": "Physics",
+ 			"degree": "B.S."
  		}
  	],
  	"onlineCourses": [
@@ -143,18 +142,45 @@ $("#footerContacts").append(phone, email, github);
  		}
  	]
  }
+/*
+var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDates = '<div class="date-text">%data%</div>';
+var HTMLschoolLocation = '<div class="location-text">%data%</div>';
+var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
-function displayWork() {
-	for (j = 0; j < work.jobs.length; j++) {
-		$("#workExperience").append(HTMLworkStart);
-		var emp = HTMLworkEmployer.replace("%data%", work.jobs[j].employer);
-		var tit = HTMLworkTitle.replace("%data%", work.jobs[j].title);
-		var loc = HTMLworkLocation.replace("%data%", work.jobs[j].location);
-		var dates = HTMLworkDates.replace("%data%", work.jobs[j].dates);
-		var description = HTMLworkDescription.replace("%data%", work.jobs[j].description);
-		$(".work-entry:last").append(emp.concat(tit, loc, dates, description));
+var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineSchool = ' - %data%</a>';
+var HTMLonlineDates = '<div class="date-text">%data%</div>';
+var HTMLonlineURL = '<br><a href="#">%data%</a>';
+*/
+function displayEd() {
+	for (s in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		var school = education.schools[s];
+		var name = HTMLschoolName.replace("%data%", school.name);
+		var location = HTMLschoolLocation.replace("%data%", school.location); // this is causing bug where page doesnt appear
+		var dates = HTMLschoolDates.replace("%data%", school["degree dates"]);
+		var major = HTMLschoolMajor.replace("%data%", school.major);
+		var degree = HTMLschoolDegree.replace("%data%", school.degree);
+		$(".education-entry").append(name+degree+dates+location+major);
 	}
+	$(".education-entry").append(HTMLonlineClasses);
+	for (o in education.onlineCourses) {
+		var course = education.onlineCourses[o];
+		var title = HTMLonlineTitle.replace("%data%", course.title);
+		var school = HTMLonlineSchool.replace("%data%", course.school);
+		var dates = HTMLonlineDates.replace("%data%", course.dates);
+		var url = HTMLonlineURL.replace("%data%", course.url);
+		$(".education-entry").append(title+school+dates+url);
+	}
+
+	
+
 }
+displayEd();
 
 function displayWork() {
 	for (j = 0; j < work.jobs.length; j++) {
@@ -170,8 +196,8 @@ function displayWork() {
 
 function inName() {
 	var nameArr = bio.name.split(" ");
-	first = nameArr[0];
-	last = nameArr[1];
+	var first = nameArr[0];
+	var last = nameArr[1];
 	if (last === last.toUpperCase()) {
 		last = last.toLowerCase();
 	}
