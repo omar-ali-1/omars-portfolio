@@ -161,20 +161,23 @@ function displayEd() {
 		$("#education").append(HTMLschoolStart);
 		var school = education.schools[s];
 		var name = HTMLschoolName.replace("%data%", school.name);
+		name = name.replace("#", school.url);
 		var location = HTMLschoolLocation.replace("%data%", school.location); // this is causing bug where page doesnt appear
 		var dates = HTMLschoolDates.replace("%data%", school["degree dates"]);
 		var major = HTMLschoolMajor.replace("%data%", school.major);
 		var degree = HTMLschoolDegree.replace("%data%", school.degree);
 		$(".education-entry").append(name+degree+dates+location+major);
 	}
+	
 	$(".education-entry").append(HTMLonlineClasses);
 	for (o in education.onlineCourses) {
 		var course = education.onlineCourses[o];
 		var title = HTMLonlineTitle.replace("%data%", course.title);
+		title = title.replace("#", course.url);
 		var school = HTMLonlineSchool.replace("%data%", course.school);
 		var dates = HTMLonlineDates.replace("%data%", course.dates);
-		var url = HTMLonlineURL.replace("%data%", course.url);
-		$(".education-entry").append(title+school+dates+url);
+		//var url = HTMLonlineURL.replace("%data%", course.url);
+		$(".education-entry").append(title+school+dates+"<br>");
 	}
 
 	
