@@ -141,6 +141,12 @@ $("#footerContacts").append(phone, email, github);
  			"school": "Udacity.com",
  			"dates": "12/01/16 - 12/30/16",
  			"url": "https://www.udacity.com/course/javascript-basics--ud804"
+ 		},
+ 		{
+ 			"title": "Developing Scalable Apps in Python",
+ 			"school": "Udacity.com",
+ 			"dates": "01/02/17 - 01/20/17",
+ 			"url": "https://www.udacity.com/course/developing-scalable-apps-in-python--ud858"
  		}
  	]
  }
