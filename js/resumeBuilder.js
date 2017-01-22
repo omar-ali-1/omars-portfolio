@@ -131,6 +131,12 @@ $("#footerContacts").append(phone, email, github);
  			"url": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/"
  		},
  		{
+ 			"title": "Intro to HTML and CSS",
+ 			"school": "Udacity.com",
+ 			"dates": "09/02/16 - 10/01/16",
+ 			"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+ 		},
+ 		{
  			"title": "Web Developement",
  			"school": "Udacity.com",
  			"dates": "10/04/16 - 12/15/16",
