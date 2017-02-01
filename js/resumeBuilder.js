@@ -42,8 +42,12 @@ This is empty on purpose! Your code to build the resume will go here.
  	"welcomeMessage": "Welcome to my bio page!",
  	"skills": [
  		"Python",
- 		"PySide App Developement",
  		"Java",
+ 		"JavaScript",
+ 		"jQuery",
+ 		"Django",
+ 		"Google AppEngine",
+ 		"PySide",
  		"HTML",
  		"CSS",
  		"Computational Physics"
