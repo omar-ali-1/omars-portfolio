@@ -76,7 +76,8 @@ email = HTMLemail.replace("%data%", bio.contacts.email);
 github = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#footerContacts").append(phone, email, github);
  var work = {
- 	"jobs": [{
+ 	"jobs": [
+ 	{
  		"employer": "Fisk University",
  		"title": "Research Assistant",
  		"location": "1000 17th Ave N, Nashville, TN",
@@ -96,11 +97,11 @@ $("#footerContacts").append(phone, email, github);
 
  var projects = {
 	"projects": [
-		{"title": "SourceConnect",
+		{"title": "Sourcebase",
 		"dates": "2016",
-		"description": "A tool to save and tag sources for future access via an easy search.",
+		"description": "A webapp for sharing, organizing, and searching research sources and discussing important issues.",
 		"images": [
-			"images/source-connect.png"
+			"images/sourcebase.png"
 			]
 		}, 
 		{"title": "Schrödinger Equation Solution",
